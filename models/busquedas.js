@@ -12,12 +12,25 @@ class Busquedas {
 
    constructor() {}
 
+   get paramsMapbox() {
+      return {
+         access_token:
+            "pk.eyJ1IjoiZ215b2Rlc2Fycm9sbGFkb3IyMyIsImEiOiJja3Mwd296anEwOTg0MndyeTdnOHE5enFsIn0.lkS6T8uSbmPH46JbF4vkyw",
+
+         limit: 5,
+         language: "es",
+      };
+   }
+
    async ciudad(lugar = "") {
       try {
-         const res = await axios.get(
-            "https://api.mapbox.com/geocoding/v5/mapbox.places/bogota.json?access_token=pk.eyJ1IjoiZ215b2Rlc2Fycm9sbGFkb3IyMyIsImEiOiJja3Mwd296anEwOTg0MndyeTdnOHE5enFsIn0.lkS6T8uSbmPH46JbF4vkyw&autocomplete=true&limit=8&language=es&="
-         );
-         console.log(res.data);
+         const intance = axios.create({
+            baseURL: `https://api.mapbox.com/geocoding/v5/mapbox.places/${lugar}.json`,
+            params: this.paramsMapbox,
+         });
+
+         const resp = await intance.get();
+         console.log(resp.data);
 
          return [];
       } catch (err) {
