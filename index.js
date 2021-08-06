@@ -17,8 +17,10 @@ const main = async () => {
 
       switch (opt) {
          case 1:
+            //  * obtener el termino de busqueda
             const lugar = await leerInput("Ciudad: ");
-            console.log(lugar);
+            await busquedas.ciudad(lugar);
+
             console.log("Infomacion de la ciudad\n".green);
             console.log("Ciudad: ");
             console.log("Lat: ");
