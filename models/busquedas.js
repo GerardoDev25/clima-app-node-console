@@ -15,7 +15,7 @@ class Busquedas {
    async ciudad(lugar = "") {
       try {
          const res = await axios.get(
-            "https://reqres.in/api/users?page=2"
+            "https://api.mapbox.com/geocoding/v5/mapbox.places/bogota.json?access_token=pk.eyJ1IjoiZ215b2Rlc2Fycm9sbGFkb3IyMyIsImEiOiJja3Mwd296anEwOTg0MndyeTdnOHE5enFsIn0.lkS6T8uSbmPH46JbF4vkyw&autocomplete=true&limit=8&language=es&="
          );
          console.log(res.data);
 
