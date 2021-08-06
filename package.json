@@ -1,0 +1,24 @@
+{
+  "name": "05-clima-app",
+  "version": "1.0.0",
+  "description": "aplicacion sobre clima de consola de node js",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GerardoDev25/clima-app-node-console.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GerardoDev25/clima-app-node-console/issues"
+  },
+  "homepage": "https://github.com/GerardoDev25/clima-app-node-console#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "inquire": "^0.4.8"
+  }
+}
