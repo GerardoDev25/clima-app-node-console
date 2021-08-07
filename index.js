@@ -32,13 +32,18 @@ const main = async () => {
                (l) => l.id === id
             );
 
-            console.log("Infomacion de la ciudad\n".green);
+            const { desc, min, max, temp } =
+               await busquedas.climaLugar(lat, lng);
+
+            console.clear();
+            console.log("Infomacion de la ciudad: \n".green);
             console.log("Ciudad: ", name);
             console.log("Lat: ", lng);
             console.log("Log: ", lat);
-            // console.log("Temperatura: ");
-            // console.log("Minimo: ");
-            // console.log("Maximo: ");
+            console.log("Temperatura: ", temp);
+            console.log("Minimo: ", min);
+            console.log("Maximo: ", max);
+            console.log("Descripcion: ", desc);
 
             break;
 
