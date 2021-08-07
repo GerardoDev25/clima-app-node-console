@@ -1,3 +1,4 @@
+require('dotenv').config()
 const colors = require("colors");
 
 const {
@@ -39,3 +40,4 @@ const main = async () => {
    } while (opt !== 0);
 };
 main();
+
