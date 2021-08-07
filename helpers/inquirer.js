@@ -65,13 +65,13 @@ const leerInput = async (message) => {
 };
 
 // ? funcion de listar las tarea para borrar
-const listadoTareasBorrar = async (tareas = []) => {
-   const choices = tareas.map((tarea, index) => {
+const listarLugares = async (lugares = []) => {
+   const choices = lugares.map((lugar, index) => {
       const idx = `${index + 1}.`.green;
 
       return {
-         value: tarea.id,
-         name: `${idx} ${tarea.desc}`,
+         value: lugar.id,
+         name: `${idx} ${lugar.name}`,
       };
    });
 
@@ -84,7 +84,7 @@ const listadoTareasBorrar = async (tareas = []) => {
       {
          type: "list",
          name: "id",
-         message: "Borrar",
+         message: "Seleccione Lugar",
          choices,
       },
    ];
@@ -137,7 +137,7 @@ module.exports = {
    inquirerMunu,
    pause,
    leerInput,
-   listadoTareasBorrar,
+   listarLugares,
    confirmar,
    MostrarTareasCheckList,
 };
