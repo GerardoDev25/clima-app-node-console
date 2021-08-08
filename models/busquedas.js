@@ -5,7 +5,18 @@ class Busquedas {
    historial = [];
    dbPath = "./db/database.json";
 
-   constructor() {}
+   constructor() {
+      this.leerDB();
+   }
+
+   get historiaCapitalizado() {
+      return this.historial.map((lugar) =>
+         lugar
+            .split(" ")
+            .map((word) => word[0].toUpperCase() + word.slice(1))
+            .join(" ")
+      );
+   }
 
    get paramsMapbox() {
       return {
@@ -78,12 +89,14 @@ class Busquedas {
          historial: this.historial,
       };
 
-      fs.writeFileSync(
-         this.dbPath,
-         JSON.stringify(payload)
-      );
+      fs.writeFileSync(this.dbPath, JSON.stringify(payload));
    }
-   leerDB() {}
+   leerDB() {
+      const info = fs.readFileSync(this.dbPath, "utf-8");
+      const data = JSON.parse(info);
+
+      if (data) this.historial = [...data.historial];
+   }
 }
 
 module.exports = Busquedas;
