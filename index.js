@@ -33,6 +33,9 @@ const main = async () => {
                (l) => l.id === id
             );
 
+            // * guardar en db
+            busquedas.agregarHistorial(name);
+
             const { desc, min, max, temp } =
                await busquedas.climaLugar(lat, lng);
 
@@ -50,7 +53,9 @@ const main = async () => {
 
          case 2:
             // * historial
-
+            busquedas.historial.forEach((lugar, index) => {
+               console.log(`${index + 1}. `.green, lugar);
+            });
             break;
          default:
             break;
