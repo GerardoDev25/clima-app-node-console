@@ -27,6 +27,7 @@ const main = async () => {
 
             // * seleccionar el lugar
             const id = await listarLugares(lugares);
+            if (id === "0") continue;
 
             const { name, lng, lat } = lugares.find(
                (l) => l.id === id
@@ -47,6 +48,10 @@ const main = async () => {
 
             break;
 
+         case 2:
+            // * historial
+
+            break;
          default:
             break;
       }
