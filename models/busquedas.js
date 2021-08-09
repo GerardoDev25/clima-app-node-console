@@ -93,12 +93,13 @@ class Busquedas {
 
       fs.writeFileSync(this.dbPath, JSON.stringify(payload));
    }
+
+   // ? leer de bd
    leerDB() {
       if (!fs.existsSync(this.dbPath)) return;
 
       const info = fs.readFileSync(this.dbPath, "utf-8");
       const data = JSON.parse(info);
-
       this.historial = [...data.historial];
    }
 }
